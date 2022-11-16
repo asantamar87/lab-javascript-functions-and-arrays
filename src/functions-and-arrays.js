@@ -15,21 +15,33 @@ const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard',
 
 
 
+// function findLongestWord(words) {
+//   if (!words.length) return null;
+ 
+//   let longestWord =words[0]
+//   for (let i = 0; i < words.length; i++) {
+
+//     if(words[i].length > longestWord){
+//       longestWord = strSplit[i]
+//     }
+    
+//   }
+
+//   return longestWord
+//  }
+
 function findLongestWord(words) {
   if (!words.length) return null;
- 
-  let longestWord =words[0]
-  for (let i = 0; i < words.length; i++) {
-
-    if(words[i].length > longestWord){
-      longestWord = strSplit[i]
-    }
-    
+  let index = 0;
+  let len = words[0].length;
+  for (let i = 1; i < words.length; i++) {
+      if (words[i].length > len) {
+          index = i;
+          len = words[i].length;
+      }
   }
-
-  return longestWord
- }
-
+  return words[index];
+}
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
@@ -51,29 +63,31 @@ function sumNumbers (numbers) {
 // Iteration #3.1 Bonus:
 //const sum = numbers.reduce(sum, 0);
 
-function sum(numbers) {
-  if (!numbers) return null;
-  let sum =0;
-    for (let index = 0; index < numbers.length; index++) {
-      const element = numbers[index];
-        if(typeof element === 'string'){
-          sum += element.length
-        } else if (typeof element === 'object') {
-          return undefined;
-        }
-        else if (Array.isArray(element)) {
-          return undefined;
-        }
+//Option 1 whitout Throw Exception
+// function sum(numbers) {
+//   if (!numbers) return null;
+//   if()
+//   let sum =0;
+//     for (let index = 0; index < numbers.length; index++) {
+//       const element = numbers[index];
+//         if(typeof element === 'string'){
+//           sum += element.length
+//         } else if (typeof element === 'object') {
+//           return undefined;
+//         }
+//         else if (Array.isArray(element)) {
+//           return undefined;
+//         }
       
-        else {
-          sum += element;
-        }
+//         else {
+//           sum += element;
+//         }
 
        
     
-    }
-  return sum
-}
+//     }
+//   return sum
+// }
 
  // return (typeof element === 'string') ? sum += element.length
         // : (typeof element === 'object') ? undefined
@@ -81,6 +95,27 @@ function sum(numbers) {
         // : sum += element;
 
 
+// Iteration #3.1 Bonus:
+function sum(array) {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+      const element = array[i];
+      switch (typeof element) {
+          case 'number':
+              sum += element;
+              break;
+          case 'string':
+              sum += element.length;
+              break;
+          case 'boolean':
+              if (element) sum += 1;
+              break;
+          default:
+              throw new Error("Unsupported data type sir or ma'am")
+      }
+  }
+  return sum;
+}
 
 
 
