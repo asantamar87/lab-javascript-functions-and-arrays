@@ -93,7 +93,7 @@ function sum(numbers) {
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
-const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+const wordsArrnumbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 const averageNumbers = (numbersAvg) => numbersAvg.length === 0 ? null :sumNumbers(numbersAvg) / numbersAvg.length
 
 // function averageNumbers(numbersAvg) {
@@ -108,14 +108,21 @@ const averageNumbers = (numbersAvg) => numbersAvg.length === 0 ? null :sumNumber
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
-const averageWordLength = (wordsArr) => !wordsArr.length ? null : wordsArr.join('').length / wordsArr.length;
+const averageWordLength = wordsArr => !wordsArr.length ? null : wordsArr.join('').length / wordsArr.length;
 
 //function averageWordLength(wordsArr) {}
 
 // Bonus - Iteration #4.1
-function avg() {
+// function avg(arr) {
+//   if(arr.length === 0){
+//          return null
+//     }else{
+//       return  sum(arr) / arr.length;
+//     }
+// }
 
-}
+const avg = arr => !arr.length ? null : sum(arr) / arr.length;
+
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
