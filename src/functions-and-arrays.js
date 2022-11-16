@@ -109,10 +109,12 @@ const averageNumbers = (numbersAvg) => numbersAvg.length === 0 ? null :sumNumber
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 const averageWordLength = wordsArr => !wordsArr.length ? null : wordsArr.join('').length / wordsArr.length;
-
 //function averageWordLength(wordsArr) {}
 
 // Bonus - Iteration #4.1
+
+const avg = arr => !arr.length ? null : sum(arr) / arr.length;
+
 // function avg(arr) {
 //   if(arr.length === 0){
 //          return null
@@ -120,8 +122,6 @@ const averageWordLength = wordsArr => !wordsArr.length ? null : wordsArr.join(''
 //       return  sum(arr) / arr.length;
 //     }
 // }
-
-const avg = arr => !arr.length ? null : sum(arr) / arr.length;
 
 
 // Iteration #5: Unique arrays
