@@ -139,14 +139,63 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+//Option 1
+// const uniquifyArray = words => !words.length ? null : [ ...new Set(words) ];
 
+/*
+Option 2
+    the other way doing the same as above:
+    - indexOf() => returns 1 (true) if the word already exists in the array
+    - indexOf() => returns -1 (false) if the word doesn't exist in the array
+
+     if (uniqueArr.indexOf(word) < 0) {
+     uniqueArr.push(word);
+     }
+
+  */  
+function uniquifyArray (wordsUnique) {
+  if (!wordsUnique.length) {
+    return null;
+  }
+
+  let uniqueArr = [];
+
+  for (let index = 0; index < wordsUnique.length; index++) {
+    const word = wordsUnique[index];
+
+    if(!uniqueArr.includes(word)){
+      uniqueArr.push(word)
+    }
+  }
+
+return uniqueArr
+}
+
+
+
+//Option 3
+
+// const uniquifyArray = wordsUnique.filter((value,array) => {
+//   return array.indexOf(value) === index;
+// })
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(wordsFind, word) {
+  if(!wordsFind.length){
+    return null;
+  } 
+
+  let doesExist = false
+
+  for (let i = 0; i < wordsFind.length; i++) {
+    if(wordsFind[i] === word)  doesExist = true
+  }
+
+  return doesExist
+}
 
 
 
@@ -164,9 +213,17 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+function howManyTimes(wordsArr, word) {
+  let count = 0;
 
-function howManyTimes() {}
+  for (let i = 0; i < wordsArr.length; i++){
+    if (wordsArr[i] === word) {
+      count++;
+    }
+  }
 
+  return count;
+}
 
 
 // Iteration #8: Bonus
