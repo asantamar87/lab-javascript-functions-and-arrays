@@ -6,8 +6,11 @@
 //     return num2
 //   }
 // }
+console.log("Empezamos ...");
 
 const maxOfTwoNumbers = (num1,num2) => num1 > num2 ? num1:num2;
+
+console.log(maxOfTwoNumbers(2,4));
 
 
 // Iteration #2: Find longest word
@@ -51,13 +54,13 @@ function sumNumbers (numbers) {
   let sum = 0;
 
   for (let i = 0; i < numbers.length; i++) {
-    const num = numbers[i];
-    sum += num;
+    sum +=  numbers[i];
   }
   return sum;
 }
 
-
+//Option 2
+// const sumNumbers = (numbers) => numbers.reduce()
 
 
 // Iteration #3.1 Bonus:
